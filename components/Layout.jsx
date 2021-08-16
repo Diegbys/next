@@ -64,6 +64,9 @@ export default function Layout({ children, title, description, home }) {
                 <Link href="/about">
                     <a>Acerca de | </a>
                 </Link>
+                <Link href="/new">
+                    <a>Nueva Pelicula </a>
+                </Link>
             </nav>
 
             <main> {children} </main>

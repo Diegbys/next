@@ -1,5 +1,5 @@
-import connectDB from '../../lib/dbConnect';
-import Movie from '../../models/Movie';
+import connectDB from '../../../lib/dbConnect';
+import Movie from '../../../models/Movie';
 
 export default async function handler(req, res) {
   //POST api/movie

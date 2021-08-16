@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import utilStyles from '../styles/utils.module.css'
 import connectDB from '../lib/dbConnect';
 import Movie from '../models/Movie';
+import Link from 'next/link';
 
 export default function Home({ movies }) {
     console.log(movies);
@@ -13,6 +14,8 @@ export default function Home({ movies }) {
                     <div className="card-body">
                         <div className="h5 text-uppercase">{item.title}</div>
                         <p className="fw-light">{item.plot}</p>
+                        <Link href={`/${item._id}`}><a className="btn btn-success btn-sm">Mas info...</a></Link>
+
                     </div>
                 </div>
             ))}
@@ -35,5 +38,6 @@ export async function getServerSideProps() {
         return { props: { movies } }
     } catch (error) {
         console.log(error);
+        return { props: { succes: false, error: 'Error' } }
     }
 }
